@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# This script is runsv control file used to send a SIGQUIT to NGINX instead of
+# SIGTERM in order to do a graceful shutdown instead of a fast shutdown.
+# This file must be placed at /etc/service/nginx/control/t.
+
+sv q nginx

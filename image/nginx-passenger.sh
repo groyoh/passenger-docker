@@ -30,6 +30,8 @@ run cp /pd_build/config/nginx_main_d_default.conf /etc/nginx/main.d/default.conf
 ## Install Nginx runit service.
 run mkdir /etc/service/nginx
 run cp /pd_build/runit/nginx /etc/service/nginx/run
+run mkdir /etc/service/nginx/control
+run cp /pd_build/runit/nginx-term-control /etc/service/nginx/control/t
 run touch /etc/service/nginx/down
 
 run mkdir /etc/service/nginx-log-forwarder
