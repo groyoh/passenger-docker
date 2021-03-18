@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'spec_helper'
 require_relative 'shared/base_system_spec'
 require_relative 'shared/ruby_image_spec'
@@ -5,7 +7,8 @@ require_relative 'shared/ruby_image_spec'
 RSpec.describe 'passenger-customizable image' do
   before(:all) do
     @container_id = capture_command(
-      "docker run -d phusion/passenger-customizable:#{VERSION} sleep 99999").strip
+      "docker run -d phusion/passenger-customizable:#{VERSION} sleep 99999"
+    ).strip
   end
 
   after(:all) do
