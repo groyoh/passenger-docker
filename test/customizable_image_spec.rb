@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'spec_helper'
 require_relative 'shared/base_system_spec'
 require_relative 'shared/ruby_image_spec'
@@ -5,7 +7,8 @@ require_relative 'shared/ruby_image_spec'
 RSpec.describe 'passenger-customizable image' do
   before(:all) do
     @container_id = capture_command(
-      "docker run -d phusion/passenger-customizable:#{VERSION} sleep 99999").strip
+      "docker run -d phusion/passenger-customizable:#{VERSION} sleep 99999"
+    ).strip
   end
 
   after(:all) do
@@ -35,7 +38,7 @@ RSpec.describe 'passenger-customizable image' do
     expect(rubies.size).to eq(1)
   end
 
-  it 'does not include Node.js' do
+  it 'does not include node.js' do
     expect(test_command_in_container('which node')).to be_falsey
   end
 end
