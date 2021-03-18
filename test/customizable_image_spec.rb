@@ -38,7 +38,7 @@ RSpec.describe 'passenger-customizable image' do
     expect(rubies.size).to eq(1)
   end
 
-  it 'does not include node.js' do
+  it 'does not include Node.js' do
     expect(test_command_in_container('which node')).to be_falsey
   end
 end
